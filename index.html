@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <script src="scripts.js"></script> <!-- external scripts file with logic-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="margin: 0;">
+
+
+    <div class="choice-div">
+
+        <p class="user-choice"> Waiting on your choice... </p>
+
+
+
+        <p class="comp-choice"> </p>
+
+
+    </div>
+
+    <div class="button-div">
+        <div>
+            <button id="rock" onclick="userChoice(this)">rock</button>
+        </div>
+
+        <div>
+            <button id="paper" onclick="userChoice(this)">paper</button>
+        </div>
+
+
+        <div>
+            <button id="scissors" onclick="userChoice(this)">scissors</button>
+        </div>
+    </div>
+
+
+    <div class="reset-div">
+
+
+        <button id="reset" onclick="reset()">reset</button>
+
+
+    </div>
+
+</body>
+
+</html>

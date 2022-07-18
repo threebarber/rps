@@ -4,7 +4,7 @@ let compScore = 0;
 let gamesPlayed = 0;
 
 function resetAll() {
-    
+
     let userScoreElem = document.querySelector("#userScore");
     userScoreElem.innerText = "User Score: 0";
 
@@ -25,18 +25,18 @@ function resetAll() {
 }
 
 
-function updateScore(winner){
-    if(winner == "user"){
+function updateScore(winner) {
+    if (winner == "user") {
         userScore++;
         gamesPlayed++;
         const userScoreText = document.querySelector('#userScore');
-        userScoreText.innerText = "User score: "+userScore;
-    }else if(winner == "computer"){
+        userScoreText.innerText = "User score: " + userScore;
+    } else if (winner == "computer") {
         compScore++;
         gamesPlayed++;
         const compScoreText = document.querySelector('#compScore');
-        compScoreText.innerText = "Computer Score: "+compScore;
-    }else if(winner == "tie"){
+        compScoreText.innerText = "Computer Score: " + compScore;
+    } else if (winner == "tie") {
         gamesPlayed++;
     }
 
@@ -53,26 +53,26 @@ function updateDiv(text) {
 }
 
 
-function getCompChoice(){
+function getCompChoice() {
 
-    let choices = ["rock","paper","scissors"];
-    
+    let choices = ["rock", "paper", "scissors"];
+
     let ranNumber = Math.floor(Math.random() * choices.length);
-    
+
     choice = choices[ranNumber];
-    
-    
-    console.log("Computer chose: " +choice);
-    
-    
+
+
+    console.log("Computer chose: " + choice);
+
+
     return choice;
-    }
-    
+}
 
 
-function playGame(e){
 
-    if(gamesPlayed == 5){
+function playGame(e) {
+
+    if (gamesPlayed == 5) {
         resetAll();
         console.log("5 games played - resetting");
         return;
@@ -82,48 +82,48 @@ function playGame(e){
     let compChoice = getCompChoice();
 
 
-    let winnerString = playRound(userChoice,compChoice)
-    console.log("Winner: "+winnerString);
+    let winnerString = playRound(userChoice, compChoice)
+    console.log("Winner: " + winnerString);
 
-    let divUpdateText = "You Chose: " +userChoice+ "\nComputer chose: "+compChoice+"\nWinner: "+winnerString;
+    let divUpdateText = "You Chose: " + userChoice + "\nComputer chose: " + compChoice + "\nWinner: " + winnerString;
     updateDiv(divUpdateText);
 
     updateScore(winnerString);
 }
 
 
-function playRound(userChoice, compChoice){
+function playRound(userChoice, compChoice) {
 
     userChoice = userChoice.toLowerCase();
     compChoice = compChoice.toLowerCase();
-    
+
     let winnerString;
-    
-    
-    if (userChoice == compChoice){
-     winnerString = "tie";
-     return winnerString;
+
+
+    if (userChoice == compChoice) {
+        winnerString = "tie";
+        return winnerString;
     }
-    else if(userChoice == "rock" && compChoice == "paper"){
-     winnerString = "computer";
-     return winnerString;
-    }else if(userChoice == "rock" && compChoice == "scissors"){
-     winnerString = "user";
-     return winnerString;
-    }else if(userChoice == "paper" && compChoice == "rock"){
-     winnerString = "user";
-     return winnerString;
-    }else if(userChoice == "paper" && compChoice == "scissors"){
-     winnerString = "computer";
-     return winnerString;
-    }else if(userChoice == "scissors" && compChoice == "paper"){
-     winnerString = "user";
-     return winnerString;
-    }else if (userChoice == "scissors" && compChoice == "rock"){
-     winnerString = "computer";
-     return winnerString;
+    else if (userChoice == "rock" && compChoice == "paper") {
+        winnerString = "computer";
+        return winnerString;
+    } else if (userChoice == "rock" && compChoice == "scissors") {
+        winnerString = "user";
+        return winnerString;
+    } else if (userChoice == "paper" && compChoice == "rock") {
+        winnerString = "user";
+        return winnerString;
+    } else if (userChoice == "paper" && compChoice == "scissors") {
+        winnerString = "computer";
+        return winnerString;
+    } else if (userChoice == "scissors" && compChoice == "paper") {
+        winnerString = "user";
+        return winnerString;
+    } else if (userChoice == "scissors" && compChoice == "rock") {
+        winnerString = "computer";
+        return winnerString;
     }
-    
-    }
-    
+
+}
+
 

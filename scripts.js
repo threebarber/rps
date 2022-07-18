@@ -1,6 +1,7 @@
 
-
-
+let userScore = 0;
+let compScore = 0;
+let gamesPlayed = 0;
 function resetDiv() {
     let userChoiceText = document.querySelector('.user-choice');
     /* let compChoiceText = document.querySelector('.comp-choice');*/
@@ -9,6 +10,26 @@ function resetDiv() {
     userChoiceText.innerText = "Play Rock Paper Scissors";
     /* compChoiceText.innerText = " "; */
 
+}
+
+
+function updateScore(winner){
+    if(winner == "user"){
+        userScore++;
+        gamesPlayed++;
+        const userScoreText = document.querySelector('#userScore');
+        userScoreText.innerText = "User score: "+userScore;
+    }else if(winner == "computer"){
+        compScore++;
+        gamesPlayed++;
+        const compScoreText = document.querySelector('#compScore');
+        compScoreText.innerText = "Computer Score: "+compScore;
+    }else if(winner == "tie"){
+        gamesPlayed++;
+    }
+
+    const gamesplayedText = document.querySelector('#rounds');
+    gamesplayedText.innerText = "Rounds Played: " + gamesPlayed;
 }
 
 
@@ -48,6 +69,8 @@ function playGame(e){
 
     let divUpdateText = "You Chose: " +userChoice+ "\nComputer chose: "+compChoice+"\nWinner: "+winnerString;
     updateDiv(divUpdateText);
+
+    updateScore(winnerString);
 }
 
 

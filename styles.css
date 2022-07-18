@@ -6,6 +6,20 @@
     width:100%;
     height:200px;
     border:red dashed;
+    font-size:30px;
+    font-weight:bold;
+  }
+
+
+  .score-div{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+    background:red;
+    width:100%;
+    height:100%;
+    border:red dashed;
     margin:0 0 0 0;
     font-size:30px;
     font-weight:bold;

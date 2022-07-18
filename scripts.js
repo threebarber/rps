@@ -2,13 +2,25 @@
 let userScore = 0;
 let compScore = 0;
 let gamesPlayed = 0;
-function resetDiv() {
-    let userChoiceText = document.querySelector('.user-choice');
-    /* let compChoiceText = document.querySelector('.comp-choice');*/
+
+function resetAll() {
+    
+    let userScoreElem = document.querySelector("#userScore");
+    userScoreElem.innerText = "User Score: 0";
+
+    let compScoreElem = document.querySelector("#compScore");
+    compScoreElem.innerText = "Computer Score: 0";
+
+    let roundsElem = document.querySelector("#rounds");
+    roundsElem.innerText = "Rounds played: 0";
 
 
-    userChoiceText.innerText = "Play Rock Paper Scissors";
-    /* compChoiceText.innerText = " "; */
+    let choiceElem = document.querySelector(".user-choice");
+    choiceElem.innerText = "Play Rock Paper Scissors";
+
+    userScore = 0;
+    compScore = 0;
+    gamesPlayed = 0;
 
 }
 
@@ -59,6 +71,12 @@ function getCompChoice(){
 
 
 function playGame(e){
+
+    if(gamesPlayed == 5){
+        resetAll();
+        console.log("5 games played - resetting");
+        return;
+    }
 
     let userChoice = e.id;
     let compChoice = getCompChoice();

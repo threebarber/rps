@@ -8,6 +8,7 @@
     border:red dashed;
     margin:0 0 0 0;
     font-size:30px;
+    font-weight:bold;
   }
   
   
@@ -43,6 +44,12 @@
   
   .comp-choice{
     color:white;
+  }
+
+
+  button {
+    font-size:30px;
+    padding:20px;
   }
 
 

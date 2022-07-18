@@ -12,7 +12,7 @@ function resetAll() {
     compScoreElem.innerText = "Computer Score: 0";
 
     let roundsElem = document.querySelector("#rounds");
-    roundsElem.innerText = "Rounds played: 0";
+    roundsElem.innerText = "Rounds Played: 0";
 
 
     let choiceElem = document.querySelector(".user-choice");
@@ -30,7 +30,7 @@ function updateScore(winner) {
         userScore++;
         gamesPlayed++;
         const userScoreText = document.querySelector('#userScore');
-        userScoreText.innerText = "User score: " + userScore;
+        userScoreText.innerText = "User Score: " + userScore;
     } else if (winner == "computer") {
         compScore++;
         gamesPlayed++;

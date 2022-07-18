@@ -85,7 +85,7 @@ function playGame(e) {
     let winnerString = playRound(userChoice, compChoice)
     console.log("Winner: " + winnerString);
 
-    let divUpdateText = "You Chose: " + userChoice + "\nComputer chose: " + compChoice + "\nWinner: " + winnerString;
+    let divUpdateText = "You Chose: " + userChoice + "\nComputer chose: " + compChoice + "\n\nWinner: " + winnerString.toUpperCase();
     updateDiv(divUpdateText);
 
     updateScore(winnerString);
